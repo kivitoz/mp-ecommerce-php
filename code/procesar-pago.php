@@ -100,13 +100,13 @@ class procesarPago{
 		
 		//URL´s Post Pago
 		$this->preference->back_urls = array(
-			"success" => CNF_GLOBAL_DOMINIO. "/success.php",
-			"failure" => CNF_GLOBAL_DOMINIO. "/failure.php",
-			"pending" => CNF_GLOBAL_DOMINIO. "/pending.php",
+			"success" => "https://requestbin.com/r/en6sjgke2d48l?1",
+			"failure" => "https://requestbin.com/r/en6sjgke2d48l?2",
+			"pending" => "https://requestbin.com/r/en6sjgke2d48l?3",
 		);
 		$this->preference->auto_return = "all";		
 		//$this->preference->auto_return = "approved";
-		$this->preference->notification_url = CNF_GLOBAL_DOMINIO. "/default.php";
+		$this->preference->notification_url = "https://requestbin.com/r/en6sjgke2d48l?4",
 		
 		//Configuraciones generales		
 		$this->preference->external_reference = "ABCD1234";
