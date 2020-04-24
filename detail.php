@@ -1,3 +1,17 @@
+<?php
+include("./code/procesar-pago.php");
+echo "idReq:".$_REQUEST["payment_method_id"];
+
+
+$ProcesarPago = new procesarPago($_POST['unit']);
+$ProcesarPago->GetArticulo()->SetId('1234');
+$ProcesarPago->GetArticulo()->SetImage($_POST['img']);
+$ProcesarPago->GetArticulo()->SetTitle($_POST['title']);
+$ProcesarPago->GetArticulo()->SetDescripcion('Dispositivo móvil de Tienda e-commerce');   
+$ProcesarPago->GetArticulo()->SetPrice($_POST['price']);
+$preference = $ProcesarPago->getPreference(); 
+var_dump($preference);
+?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
@@ -100,7 +114,7 @@
                                             <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
                                                 <div class="as-tilegallery-element as-image-selected">
                                                     <div class=""></div>
-                                                    <img src="./assets/003.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" style="content:-webkit-image-set(url(<?php echo $_POST['img'] ?>) 2x);">
+                                                    <img src="./assets/003.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" style="content:-webkit-image-set(url(<?php echo $ProcesarPago->GetArticulo()->GetImage() ?>) 2x);">
                                                 </div>
                                                 
                                             </div>
@@ -118,19 +132,25 @@
                                         <div class="as-producttile-title">
                                             <h3 class="as-producttile-name">
                                                 <p class="as-producttile-tilelink">
-                                                    <span data-ase-truncate="2"><?php echo $_POST['title'] ?></span>
+                                                    <span data-ase-truncate="2"><?php echo $ProcesarPago->GetArticulo()->GetTitle();?></span>
                                                 </p>
 
                                             </h3>
                                         </div>
                                         <h3 >
-                                            <?php echo $_POST['price'] ?>
+                                            <?php echo $ProcesarPago->GetArticulo()->GetPrice();?>
                                         </h3>
                                         <h3 >
-                                            <?php echo "$" . $_POST['unit'] ?>
+                                            <?php echo "$" . $ProcesarPago->GetUnidad() ?>
                                         </h3>
                                     </div>
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                    <!-- <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button> -->
+                                    <form action="code/procesar-pago" method="POST">
+                                      <script
+                                        src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" 
+                                        data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra" data-header-color="#2D3277" data-elements-color="#2D3277">
+                                        </script>
+                                    </form>
                                 </div>
                             </div>
                         </div>
