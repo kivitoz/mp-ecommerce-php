@@ -104,8 +104,8 @@ class procesarPago{
 			"failure" => "https://requestbin.com/r/en6sjgke2d48l?2",
 			"pending" => "https://requestbin.com/r/en6sjgke2d48l?3"
 		);
-		$this->preference->auto_return = "all";		
-		//$this->preference->auto_return = "approved";
+		//$this->preference->auto_return = "all";		
+		$this->preference->auto_return = "approved";
 		$this->preference->notification_url = "https://requestbin.com/r/en6sjgke2d48l?4";
 		
 		//Configuraciones generales		

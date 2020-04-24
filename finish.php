@@ -66,7 +66,16 @@
 		<div class="container">
 		  <div class="py-5 text-center">			 
 			 <h2>Tienda e-commerce</h2>
+             <?php
+             if($status=="200"){
+             ?>
 			 <p class="lead">Su compra se completó correctamente.</p>
+             <?php
+             }else{
+             ?>
+             <p class="lead">Error.</p>
+             <?php
+             ?>
 		  </div>
 		  <div class="row">
 			 <div class="col-md-4 order-md-2 mb-4">
