@@ -106,7 +106,7 @@ class procesarPago{
 		);
 		$this->preference->auto_return = "all";		
 		//$this->preference->auto_return = "approved";
-		$this->preference->notification_url = CNF_GLOBAL_DOMINIO. "/default.php",
+		$this->preference->notification_url = CNF_GLOBAL_DOMINIO. "/default.php";
 		
 		//Configuraciones generales		
 		$this->preference->external_reference = "ABCD1234";
