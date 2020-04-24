@@ -10,7 +10,7 @@ $ProcesarPago->GetArticulo()->SetTitle($_POST['title']);
 $ProcesarPago->GetArticulo()->SetDescripcion('Dispositivo móvil de Tienda e-commerce');   
 $ProcesarPago->GetArticulo()->SetPrice($_POST['price']);
 $preference = $ProcesarPago->getPreference(); 
-var_dump($preference);
+/* var_dump($preference); */
 ?>
 <!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
