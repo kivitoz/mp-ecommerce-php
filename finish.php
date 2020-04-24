@@ -73,8 +73,9 @@
              <?php
              }else{
              ?>
-             <p class="lead">Error.</p>
+             <p class="lead">Error al obtener el estado del pago.</p>
              <?php
+             }
              ?>
 		  </div>
 		  <div class="row">
