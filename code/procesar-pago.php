@@ -41,7 +41,7 @@ class procesarPago{
 	
 	function getPreference(){
 		// Agrega credenciales
-		MercadoPago\SDK::setAccessToken('TEST-6317427424180639-042414-17afbab8a24694cba7fdeb436bf09594-469485398');
+		MercadoPago\SDK::setAccessToken('APP_USR-7455310476774640-042418-208e377607b9c1e908f72d0c17be8715-469485398');
 		
 		// Crea un objeto de preferencia
 		$this->preference = new MercadoPago\Preference();
