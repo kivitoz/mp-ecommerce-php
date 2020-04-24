@@ -36,6 +36,8 @@
     echo "Metodo de Pago:".$payment2['body']['payment_method_id']."<br />";
     echo "Descripcion:".$payment2['body']['description']."<br />";
     echo "External Reference:".$payment2['body']['external_reference']."<br />";
+
+    var_dump($payment2);
     
 
 ?>
