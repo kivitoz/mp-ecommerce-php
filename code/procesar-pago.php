@@ -104,8 +104,9 @@ class procesarPago{
 			"failure" => CNF_GLOBAL_DOMINIO. "/failure.php",
 			"pending" => CNF_GLOBAL_DOMINIO. "/pending.php",
 		);
-		//$this->preference->auto_return = "all";		
-		$this->preference->auto_return = "approved";
+		$this->preference->auto_return = "all";		
+		//$this->preference->auto_return = "approved";
+		$this->preference->notification_url = CNF_GLOBAL_DOMINIO. "/default.php",
 		
 		//Configuraciones generales		
 		$this->preference->external_reference = "ABCD1234";
