@@ -143,7 +143,7 @@ $preference = $ProcesarPago->getPreference();
                                         </h3>
                                     </div>
                                     <!-- <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button> -->
-                                    <form action="process.php" method="POST">
+                                    <form action="finish.php" method="POST">
                                       <script
                                         src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" 
                                         data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra" data-header-color="#2D3277" data-elements-color="#2D3277">
