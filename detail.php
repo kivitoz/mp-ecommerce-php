@@ -1,7 +1,5 @@
 <?php
 include("./code/procesar-pago.php");
-echo "idReq:".$_REQUEST["payment_method_id"];
-
 
 $ProcesarPago = new procesarPago($_POST['unit']);
 $ProcesarPago->GetArticulo()->SetId('1234');
