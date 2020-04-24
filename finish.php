@@ -2,10 +2,10 @@
     // SDK de Mercado Pago
     require  'vendor/autoload.php';
 
-    $paymentId = "25003136";
+    $paymentId = $_POST['id'];
     
     // Agrega credenciales
-	MercadoPago\SDK::setAccessToken('TEST-8196777983571350-031822-67512cd23d704fe6dfb8670cdcd5c825-469485398');
+	MercadoPago\SDK::setAccessToken('APP_USR-7455310476774640-042418-208e377607b9c1e908f72d0c17be8715-469485398');
     
     
 
@@ -21,7 +21,21 @@
     echo "Metodo de Pago:".$payment['body']['payment_method_id']."<br />";
     echo "Descripcion:".$payment['body']['description']."<br />";
     echo "External Reference:".$payment['body']['external_reference']."<br />";
-  
+
+    $payment2 = MercadoPago\SDK::get(
+        "/v1/payments/search",
+        array(
+            "external_reference" => "ABCD1234"
+        )
+    );
+
+    echo "<br />";
+    echo "<br />";
+    echo "status:".$payment2['code']."<br />";
+    echo "Codigo de Pago:".$payment2['body']['id']."<br />";
+    echo "Metodo de Pago:".$payment2['body']['payment_method_id']."<br />";
+    echo "Descripcion:".$payment2['body']['description']."<br />";
+    echo "External Reference:".$payment2['body']['external_reference']."<br />";
     
 
 ?>
